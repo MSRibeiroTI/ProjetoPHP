@@ -1,12 +1,25 @@
 <?php
-    session_start();
-    echo "Bem Vindo ".$_SESSION["usuario"];
+session_start();
+echo "Bem Vindo ".$_SESSION["usuario"];
     echo date(", d/m/Y");
     if(empty($_SESSION)){
         print "<script>location.href='index.php';</script>";
     }
+include_once ("config/config.php");
 
+if (isset($_GET['Id'])) {
+    $id = $_GET['Id'];
+    $sql = "SELECT * FROM Cad_Children WHERE id = '$id'";
+    $res = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($res);
+    
+
+} else {
+    echo "Nenhum ID encontrado";
+}
+$conn->close();
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -31,44 +44,47 @@
 </div>
 
 <body>
+    <script>
+
+    </script>
  <div class="card">
     <div class="card-body">
-    <h1>Cadastro para Batismo</h1>
-    <form action="config/addbat.php" method="POST">
+    <h1>Editar Cadastro</h1>
+     <form action="config/updatebat.php?Id=<?php echo $row['Id']; ?>" method="POST">
         <div>
           <label for="nome-crianca">Nome da Criança:</label>
-          <input type="text" id="nome-crianca" name="nome-crianca" required>
+          <input type="text" id="nome-crianca" name="nome-crianca" value="<?= $row['Nome'] ?>" >
         </div>
         <div>
           <label for="pai">Pai:</label>
-          <input type="text" id="pai" name="pai">
+          <input type="text" id="pai" name="pai" value="<?php echo $row['Pai']; ?>">
         </div>
         <div>
           <label for="mae">Mãe:</label>
-          <input type="text" id="mae" name="mae" required>
+          <input type="text" id="mae" name="mae" value="<?php echo $row['Mae']; ?>">
         </div>
         <div>
           <label for="data-nascimento">Data de Nascimento:</label>
-          <input type="date" id="data-nascimento" name="data-nascimento" required>
+          <input type="date" id="data-nascimento" name="data-nascimento" value="<?php echo $row['Nascimento']; ?>">
         </div>
         <div>
           <label for="cert-nascimento">Certidão Nasc.:</label>
-          <input type="text" id="cert-nascimento" name="cert-nascimento" required>
+          <input type="text" id="cert-nascimento" name="cert-nascimento" value="<?php echo $row['cert_nasc']; ?>">
         </div>
         <div>
           <label for="padrinho">Nome do Padrinho:</label>
-          <input type="text" id="padrinho" name="padrinho" required>
+          <input type="text" id="padrinho" name="padrinho" value="<?php echo $row['Padrinho']; ?>">
         </div>
         <div>
           <label for="madrinha">Nome da Madrinha:</label>
-          <input type="text" id="madrinha" name="madrinha" required>
+          <input type="text" id="madrinha" name="madrinha" value="<?php echo $row['Madrinha']; ?>">
         </div>
         <div>
           <label for="data-batismo">Data do Batismo:</label>
-          <input type="date" id="data-batismo" name="data-batismo" required>
+          <input type="date" id="data-batismo" name="data-batismo" value="<?php echo $row['Batizado']; ?>">
         </div>
         <div>
-          <button type="submit">Enviar</button>
+          <button type="submit">Atualizar</button>
         </div>
       </form>
     </div>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de Login</title>
-  <link rel='stylesheet' type='text/css' media='screen' href='login.css'>
+  <link rel='stylesheet' type='text/css' media='screen' href='css/login.css'>
     <script src='pastoral.js'></script>
     <style media="screen">
         </style>
@@ -15,7 +15,7 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action="login.php" method="post">
+    <form action="config/login.php" method="post">
         <h2>Pastoral do Batismo</h2>
         <h4>Paróquia Nossa Senhora do Livramento</h4>
         <h4>Arcoverde - PE</h4>
@@ -29,9 +29,9 @@
         <button type="submit">Entrar</button>
         
         <div class="social">    
-          <div class="in"><li><i class="fab fa-google" ></i><a href="https://www.instagram.com/paroquiadolivramento/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA=="></i>  Instagram </div></a></li>
+          <div class="in"><li><i class="fab fa-google" ></i><a href="https://www.instagram.com/paroquiadolivramento/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" target="_blank" rel="noopener noreferrer"></i>  Instagram </div></a></li>
           
-          <div class="fb"><li><i class="fab fa-facebook"></i><a href="https://www.facebook.com/pnslivramento"></i>  Facebook</div></a></li>
+          <div class="fb"><li><i class="fab fa-facebook"></i><a href="https://www.facebook.com/pnslivramento" target="_blank" rel="noopener noreferrer"></i>  Facebook</div></a></li>
           
         </div>
   </form>

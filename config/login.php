@@ -2,7 +2,7 @@
  session_start();
 
     if (empty($_POST) or empty($_POST["usuario"]) or empty($_POST["senha"])) {
-      print "<script>location.href='index.php';</script>";
+      print "<script>location.href='/index.php';</script>";
      }
   
     include('config.php');
@@ -20,12 +20,11 @@ $qtd = $resultado->num_rows;
       if($qtd > 0){
         $_SESSION["usuario"] = $usuario;
         $_SESSION["nome"] = $row->nome;
-        header("location: home.php");
+        $_SESSION["nivel"] = $row->nivel;
+        header("location: ../home.php");
       }else{
-        print "<script>alert('Usuário ou senha incorretos');</script>";
-        header("Location: index.php");
+        echo "Usuário ou senha incorretos";
+        header("Location: /index.php");
         }
-
-
-
+        
 ?>

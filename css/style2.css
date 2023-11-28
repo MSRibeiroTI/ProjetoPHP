@@ -1,0 +1,118 @@
+body{
+  font-family: 'Poppins',sans-serif;
+   background-color: #73a7e6;
+}
+h1{
+  font-size: 28px;
+  color: #1a385d;
+  text-align: center;
+  font-family: 'Poppins',sans-serif;
+   text-shadow:0px 0px 5px #fff;
+}
+h2{
+  color: #1a385d;
+  text-align: center;
+  font-family: 'Poppins',sans-serif;
+  text-shadow:0px 0px 5px #fff;
+}
+  div {
+    margin: 10px 0;
+  }
+    
+  input {
+    
+    width: 400px;
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+
+  button {
+    width: 200px;
+    margin: 0 auto;
+    background-color: #085c94;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .menu{
+    font-family: 'Poppins',sans-serif;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+    list-style:none;
+    border:1px solid #c0c0c0;
+    float:center;
+    transform: translateY(-40%);
+    position: relative;
+    font-size:15px;
+    color:#336699;
+  }
+.menu li{
+    position:relative;
+    float:left;
+   }
+.menu li a{color:#111053;
+    text-decoration:none;
+    padding:20px 50px;
+    display:block;
+}
+.nav-container {
+  width: 100%;
+  overflow: hidden;
+  margin: 2.95% auto;
+}
+.menu li a:hover{
+background:#111053;
+color:#fff;
+-moz-box-shadow:0 3px 10px 0 #CCC;
+-webkit-box-shadow:0 3px 10px 0 #ccc;
+text-shadow:0px 0px 5px #fff;
+}
+  table {
+    font-size: 15px;
+    font-family: 'Poppins',sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+    margin: auto;
+    justify-content: center;
+  }
+   
+   td {
+    border-bottom: 1px solid #3d7bb6;
+    padding: 5px;
+    text-align: center;
+    background-color: #bad2f0;  
+  }
+   
+   th {
+    background-color: #214f79;
+    text-align: center;
+    color: white;
+    
+   }
+
+   .cadastro{
+    color: #1a385d;
+    font-family: 'Poppins',sans-serif;
+    text-align: center;
+    text-shadow:0px 0px 5px #fff;
+    font-size: 15px;
+   }
+   .busca {
+    color: #1a385d;
+    font-family: 'Poppins',sans-serif;
+    font-size: 15px;
+  }
+
+  form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+      }
+
+   
+    

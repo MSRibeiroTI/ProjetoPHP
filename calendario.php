@@ -30,7 +30,7 @@
             <li><a href="logout.php">Sair</a></li>
     </ul>
 </div>
-<img src="img/LogoBatismo.png" alt="">
+<img src="img/calendario.jpeg" alt="">
 
 </body>
 <footer>
