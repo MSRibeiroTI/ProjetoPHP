@@ -12,9 +12,10 @@
 
          if (isset($_GET['id'])) {
              $id = $_GET['id'];
-             $sql = "SELECT * FROM agentes WHERE id = '$id'";
+             $sql = "SELECT * FROM usuario WHERE id = '$id'";
              $res = mysqli_query($conn, $sql);
              $row = mysqli_fetch_assoc($res);
+             
              
          
          } else {
@@ -49,25 +50,37 @@
 <body>
  <div class="card">
     <div class="card-body">
-    <h1>Atualização do Cadastro</h1>
-    <form action="config/editagent.php?id= <?php echo $row['id']; ?>" method="post" >
+    <h1>Atualização do Usuário do Sistema</h1>
+    <form action="config/edittuser.php?id=<?php echo $row['id']; ?>" method="post" >
         <div>
-          <label for="agente">Nome:</label>
-          <input type="text" id="agente" name="agente" VALUE="<?= $row['name']; ?>" required>
+          <label for="nome-agente">Nome do Agente:</label>
+          <input type="text" id="nome-agente" name="nome-agente" value="<?php echo $row['nome_comp'];?>" required>
         </div>
         <div>
-          <label for="address">Endereço</label>
-          <input type="text" id="address" name="address" value="<?= $row['address']; ?>">
+          <label for="login">Nome para Login:</label>
+          <input type="text" id="login" value="<?=$row['nome']; ?>" name="login">
            </div>
           <div>
-          <label for="phone">Telefone:</label>
-          <input type="text" id="phone" name="phone" value="<?= $row['phone']; ?>"required>
+          <label for="senha">Senha:</label>
+          <input type="password" id="senha" name="senha" required>
         </div>
-            <button type="submit">Salvar</button>
+        <div>
+          <label for="confirmar-senha">Confirme a Senha:</label>
+          <input type="password" id="confirmar-senha" name="confirmar-senha" required>
+          </div>
+          <div>
+          <label for="Nível de acesso"> Nível de Acesso ao Sistema:</label>
+          <select  id="nivel_acesso" name="nivel_acesso">
+            <option value="1">Usuario</option>
+            <option value="3">Administrador</option>
+            </select>
+            </div>
+              <button type="submit">Salvar</button>
                        
             </div>
         </form>
-      </div>
+       
+    </div>
  </div>
  </body>
 </html>

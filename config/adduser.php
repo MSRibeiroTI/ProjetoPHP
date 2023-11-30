@@ -17,8 +17,8 @@ $resultado = $conn->query($sql) or trigger_error($conn->error);
 
   if($resultado==true){
     echo "<script>alert('Cadastrado com sucesso!')</script>";
-    header("location: user.php");
+    header("location: ../user.php");
   }else{
-     header("Location: home.php");
+     header("Location: ../home.php");
     }
 ?>

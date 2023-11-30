@@ -11,6 +11,7 @@
     include_once('config/config.php');
     $sql = "SELECT * FROM usuario ORDER BY nome_comp";
     $res = mysqli_query($conn, $sql);
+    $quant = mysqli_num_rows($res);
     
 ?>
 
@@ -42,20 +43,27 @@
         <tr>
             <th>Nome</th>
             <th>Login/Usuário</th>
+            <th>Nível</th>
             <th>Opções</th>
         </tr>
         <?php while($row = mysqli_fetch_assoc($res)): ?>
             <tr>
                 <td><?php echo $row['nome_comp']; ?></td>
                 <td><?php echo $row['nome']; ?></td>
+                <td><?php echo $row['nivel']; ?></td>
                 <td>
-                    <a href="editar.php?id=<?php echo $row['id']; ?>">Editar</a>
-                    <a href="deletar.php?id=<?php echo $row['id']; ?>">Deletar</a>
+                    <a href="edituser.php?id=<?php echo $row['id']; ?>">Editar</a>
+                    <a onclick="return confirm('Confirma a exclusão deste registro?')"
+                     href="config/deleteuser.php?id=<?php echo $row['id']; ?>">Excluir</a>
                 </td>
             </tr>
         <?php endwhile; ?>
     </table>
 <br>
+<table>
+        <tr><td><?php echo "Usuários Cadastrados: $quant"; ?></td></tr>
+        </table>
+        <br>
 <div class="cadastro">
     <h2>Cadastrar novo Usuário:</h2>
     <line>
