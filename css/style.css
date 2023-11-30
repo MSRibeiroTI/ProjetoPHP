@@ -106,8 +106,9 @@ footer {
   }
 
   table {
+    font-size: 15px;
     font-family: 'Poppins',sans-serif;
-    width: 50%;
+    width: 80%;
     border-collapse: collapse;
     margin: auto;
     justify-content: center;

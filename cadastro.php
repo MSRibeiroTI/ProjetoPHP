@@ -15,7 +15,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Casdastro</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
     <script src='main.js'></script>
 </head>
 <div class="nav-container">
@@ -26,7 +26,7 @@
             <li><a href="calendario.php">Calendário</a></li>
             <li><a href="#">Menu</a></li>
             <li><a href="user.php">Usuários</a></li>    
-            <li><a href="logout.php">Sair</a></li>
+            <li><a href="config/logout.php">Sair</a></li>
     </ul>
 </div>
 

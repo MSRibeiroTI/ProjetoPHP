@@ -4,8 +4,9 @@
     echo date(", d/m/Y");
     if(empty($_SESSION)){
         print "<script>location.href='index.php';</script>";
-    }elseif(($_SESSION["nivel"]) =='3'){
-        print "<script>location.href='AgentListadmin.php';</script>";
+    }elseif(($_SESSION["nivel"]) !='3'){
+        echo "<script>alert('Acesso Restrito!')</script>";
+        print "<script>location.href='home.php';</script>";
            }
     include_once('config/config.php');
     $sql = "SELECT * FROM agentes ORDER BY name";
@@ -43,20 +44,31 @@
             <th>Nome</th>
             <th>Endereço</th>
             <th>Telefone</th>
+            <th>Opções</th>
         </tr>
         <?php while($row = mysqli_fetch_assoc($res)): ?>
             <tr>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['address']; ?></td>
                 <td><?php echo $row['phone']; ?></td>
+                <td>
+                    <a href="editagentes.php?id=<?php echo $row['id']; ?>">Editar</a>
+                    <a onclick="return confirm('Deseja realmente excluir o Agente?')"
+                    href="config/deleteagent.php?id=<?php echo $row['id']; ?>">Excluir</a>
+                </td>
             </tr>
         <?php endwhile; ?>
     </table>
+    <br>
     <table>
         <tr><td><?php echo "Agentes Cadastrados: $quant"; ?></td></tr>
-    <br>
-
-  
+        </table>
+<br>
+<div class="cadastro">
+    <h2>Cadastrar novo Agente:</h2>
+    <line>
+    <a href="cadagentes.php"><button>Cadastrar</button></a>
+        </div>    
 <?php
     mysqli_close($conn);
 ?>

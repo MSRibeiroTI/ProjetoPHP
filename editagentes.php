@@ -8,6 +8,19 @@
       echo "<script>alert('Acesso Restrito!')</script>";
       print "<script>location.href='home.php';</script>";
          }
+         include_once ("config/config.php");
+
+         if (isset($_GET['id'])) {
+             $id = $_GET['id'];
+             $sql = "SELECT * FROM agentes WHERE id = '$id'";
+             $res = mysqli_query($conn, $sql);
+             $row = mysqli_fetch_assoc($res);
+             
+         
+         } else {
+             echo "Nenhum ID encontrado";
+         }
+         $conn->close();
 
 ?>
 
@@ -37,18 +50,18 @@
  <div class="card">
     <div class="card-body">
     <h1>Cadastro dos Agesntes da Pastoral</h1>
-    <form action="config/addagent.php" method="post" >
+    <form action="config/editagent.php?id= <?php echo $row['id']; ?>" method="post" >
         <div>
           <label for="agente">Nome:</label>
-          <input type="text" id="agente" name="agente" required>
+          <input type="text" id="agente" name="agente" VALUE="<?= $row['name']; ?>" required>
         </div>
         <div>
           <label for="address">Endereço</label>
-          <input type="text" id="address" name="address">
+          <input type="text" id="address" name="address" value="<?= $row['address']; ?>">
            </div>
           <div>
           <label for="phone">Telefone:</label>
-          <input type="text" id="phone" name="phone" required>
+          <input type="text" id="phone" name="phone" value="<?= $row['phone']; ?>"required>
         </div>
             <button type="submit">Salvar</button>
                        
