@@ -58,6 +58,7 @@
           <label for="Nível de acesso"> Nível de Acesso ao Sistema:</label>
           <select  id="nivel_acesso" name="nivel_acesso">
             <option value="1">Usuario</option>
+            <option value="2">Agente</option>
             <option value="3">Administrador</option>
             </select>
             </div>

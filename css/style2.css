@@ -18,6 +18,7 @@ h2{
   div {
     margin: 10px 0;
   }
+  
     
   input {
     
@@ -34,6 +35,15 @@ h2{
     border: none;
     padding: 10px;
     cursor: pointer;
+    transition: background .3;
+    border-radius: 5px;
+    
+  }
+  button:hover {
+    background-color: #769ebd;
+  }
+  button:active {
+    background-color: #2e6596;
   }
   
   .menu{
@@ -105,6 +115,7 @@ text-shadow:0px 0px 5px #fff;
     color: #1a385d;
     font-family: 'Poppins',sans-serif;
     font-size: 15px;
+    
   }
 
   form{

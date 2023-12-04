@@ -58,10 +58,18 @@ $conn->close();
         <div>
           <label for="pai">Pai:</label>
           <input type="text" id="pai" name="pai" value="<?php echo $row['Pai']; ?>">
+          <label for="Telefonte">Telefonte:</label>
+          <input type="tel" id="telefone" name="telefone" value="<?php echo $row['phonepai']; ?>">
         </div>
         <div>
           <label for="mae">Mãe:</label>
           <input type="text" id="mae" name="mae" value="<?php echo $row['Mae']; ?>">
+          <label for="Telefone">Telefone:</label>
+          <input type="tel" id="telefone2" name="telefone2" value="<?php echo $row['phonemae']; ?>">
+        </div>
+        <div>
+          <label for="endereço">Endereço:</label>
+          <input type="text" id="endereco" name="endereco" placeholder="Rua, Bairro, Cidade" value="<?php echo $row['addres']; ?>">
         </div>
         <div>
           <label for="data-nascimento">Data de Nascimento:</label>
@@ -70,6 +78,10 @@ $conn->close();
         <div>
           <label for="cert-nascimento">Certidão Nasc.:</label>
           <input type="text" id="cert-nascimento" name="cert-nascimento" value="<?php echo $row['cert_nasc']; ?>">
+        </div>
+        <div>
+          <label for="curso">Data do Curso de Preparação:</label>
+          <input type="date" name="curso" id="curso" value="<?php echo $row['curso']?>">
         </div>
         <div>
           <label for="padrinho">Nome do Padrinho:</label>
@@ -84,8 +96,10 @@ $conn->close();
           <input type="date" id="data-batismo" name="data-batismo" value="<?php echo $row['Batizado']; ?>">
         </div>
         <div>
+          <br>
           <button type="submit">Atualizar</button>
         </div>
+        <br><br>
       </form>
     </div>
  </div>

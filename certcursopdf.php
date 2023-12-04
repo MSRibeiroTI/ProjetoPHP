@@ -4,7 +4,10 @@ echo "Bem Vindo ".$_SESSION["usuario"];
     echo date(", d/m/Y");
     if(empty($_SESSION)){
         print "<script>location.href='index.php';</script>";
-    }
+    }elseif(($_SESSION["nivel"]) =='1'){
+      echo "<script>alert('Acesso Restrito!')</script>";
+      print "<script>location.href='./batizadolist.php';</script>";
+         }
 
 include_once ("config/config.php");
 
@@ -58,7 +61,7 @@ $conn->close();
         <p>__________________________________</p>
         <p>Coordenador</p>
         <br>
-        <h5>Certificado válido por 2 anos</h5>  
+        <h5>Certificado válido por 1 ano</h5>  
         </div>
 
         <div class="certmae">
@@ -75,7 +78,7 @@ $conn->close();
         <p>__________________________________</p>
         <p>Coordenador</p>
         <br>
-        <h5>Certificado válido por 2 anos</h5>  
+        <h5>Certificado válido por 1 ano</h5>  
         </div>
 
         <div class="certpad">
@@ -92,7 +95,7 @@ $conn->close();
         <p>__________________________________</p>
         <p>Coordenador</p>
         <br>
-        <h5>Certificado válido por 2 anos</h5>  
+        <h5>Certificado válido por 1 ano</h5>  
         </div>
 
         <div class="certmad">
@@ -109,7 +112,7 @@ $conn->close();
         <p>__________________________________</p>
         <p>Coordenador</p>
         <br>
-        <h5>Certificado válido por 2 anos</h5>  
+        <h5>Certificado válido por 1 ano</h5>  
         </div>
        
         </section>

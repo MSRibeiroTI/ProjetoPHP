@@ -1,16 +1,10 @@
 body{
   font-family: 'Poppins',sans-serif;
    background-color: #73a7e6;
+   
 }
 h1{
   font-size: 28px;
-  color: #1a385d;
-  text-align: center;
-  font-family: 'Poppins',sans-serif;
-  padding-top: 0;
-  text-shadow:0px 0px 5px #fff;
-}
-h2{
   color: #1a385d;
   text-align: center;
   font-family: 'Poppins',sans-serif;
@@ -22,36 +16,52 @@ form {
   padding-top: 0;
    width: 600px;
     margin: 0 auto;
-    font-family: 'Poppins',sans-serif;
   }
   
   div {
     margin: 10px 0;
+   }
+
+   .btn {
+    display: block;
+    text-align: center;
+    cursor: pointer;
+    color: #ffffff;
+    text-decoration: none;
+    
   }
-  .card{
-    background-color: #a8c8f0;
+  
+   .card{
+    background-color: #dfeeff;
     font-family: 'Poppins',sans-serif;
     width: 60%;
     border-collapse: collapse;
     margin: auto;
-    justify-content: center;
+    
    }
+   .a{
+    background-color: #ffffff;
+    border-collapse: collapse;
+   
+    
+   }
+ 
+   @media only screen and (max-width: 330px) {
+    .Card, .a, .b, .buttons, .menu, .menu li, .menu li a {
+        width: 250px;
+    }
+}
   
   label {
     display: inline-block;
-    width: 150px;
+    width: 220px;
+    height: 25px;
     font-weight: bold;
-  }
-  
-  input {
-    display: inline-block;
-    width: 400px;
-    border: 1px solid #ccc;
-    padding: 5px;
-  }
+    background-color: #e8f1fc;
 
+  }
+ 
   button {
-    display: block;
     width: 200px;
     margin: 0 auto;
     background-color: #085c94;
@@ -61,6 +71,8 @@ form {
     cursor: pointer;
     transition: background .3;
     border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
     
   }
   button:hover {
@@ -69,6 +81,7 @@ form {
   button:active {
     background-color: #2e6596;
   }
+  
   .menu{
     font-family: 'Poppins',sans-serif;
     justify-content: center;
@@ -104,52 +117,6 @@ color:#fff;
 -webkit-box-shadow:0 3px 10px 0 #ccc;
 text-shadow:0px 0px 5px #fff;
 }
-img {
-  width: 30%;
-  margin: auto;
-  display: block;
-  text-align: center;   
-}
-footer {
-  color: #555;
-  font-size:12px;
-  margin-top:5em;
-  text-align:center;
-  }
+
   
-  footer a {
-  color:#008FEA;
-  text-decoration:none;
-  }
-
-  table {
-    font-size: 15px;
-    font-family: 'Poppins',sans-serif;
-    width: 80%;
-    border-collapse: collapse;
-    margin: auto;
-    justify-content: center;
-  }
-   
-  td {
-    border-bottom: 1px solid #ddd;
-    padding: 5px;
-    text-align: center;
-    background-color: #bad2f0;  
-  }
-   
-   th {
-    background-color: #214f79;
-    text-align: center;
-    color: white;
-    
-   }
-
-   .cadastro{
-    color: #1a385d;
-    font-family: 'Poppins',sans-serif;
-    text-align: center;
-    text-shadow:0px 0px 5px #fff;
-    font-size: 15px;
-   }
     

@@ -46,7 +46,7 @@
                 <label class="control-label">Pesquisar por data do batismo</label>
                 <input type="date" name="data">
             </div>
-            <button type="submit" value="a" class="listarbtn" class="listar" name="listar">Listar todos</button>
+            <button type="submit" value="a" name="listar">Listar todos</button>
             <button type="submit" formaction="cadastro.php">Cadastrar</button>
             <button type="submit">Pesquisar</button>
            
@@ -78,28 +78,26 @@
         <table>
         <tr>
             <th>Criança</th>
-            <th>Pai</th>
-            <th>Mãe</th>
             <th>Nascimento</th>
             <th>Cert. Nasc.</th>
-            <th>Padrinho</th>
-            <th>Madrinha</th>
+            <th>Data do Curso</th>
             <th>Data de Batismo</th>
+            <th>Cadastro</th>
             <th>Certificados</th>
         </tr>
         <?php while($row = mysqli_fetch_assoc($res)): ?>
             <tr>
                 <td><?php echo $row['Nome']; ?></td>
-                <td><?php echo $row['Pai']; ?></td>
-                <td><?php echo $row['Mae']; ?></td>
                 <td><?php echo $row['Nascimento']; ?></td>
                 <td><?php echo $row['cert_nasc']; ?></td>
-                <td><?php echo $row['Padrinho']; ?></td>
-                <td><?php echo $row['Madrinha']; ?></td>
+                <td><?php echo $row['curso']; ?></td>
                 <td><?php echo $row['Batizado']; ?></td>
                 <td>
-                    <a href="editabat.php?Id=<?php echo $row['Id']; ?>">(Editar)</a>
-                    <a href="certcursopdf.php?Id=<?php echo $row['Id']; ?>">(Curso)</a>
+                    <a href="visualizarDados.php?Id=<?php echo $row['Id']?>"><span title="Visualizar"><img src="img/view.png"></span></a>
+                    <a href="editabat.php?Id=<?php echo $row['Id']; ?>"><span title="Editar"><img src="img/edit.png"></span></a>
+                </td>
+                <td>
+                    <a  href="certcursopdf.php?Id=<?php echo $row['Id']; ?>">(Curso)</a>
                     <a href="certbatismo.php?Id=<?php echo $row['Id']; ?>">(Batismo)</a>
                 </td>
             </tr>

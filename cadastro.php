@@ -35,17 +35,25 @@
     <div class="card-body">
     <h1>Cadastro para Batismo</h1>
     <form action="config/addbat.php" method="POST">
-        <div>
+    <div>
           <label for="nome-crianca">Nome da Criança:</label>
           <input type="text" id="nome-crianca" name="nome-crianca" required>
         </div>
         <div>
           <label for="pai">Pai:</label>
-          <input type="text" id="pai" name="pai">
+          <input type="text" id="pai" name="pai" required>
+          <label for="Telefonte">Telefonte:</label>
+          <input type="tel" id="telefone" name="telefone" required>
         </div>
         <div>
           <label for="mae">Mãe:</label>
           <input type="text" id="mae" name="mae" required>
+          <label for="Telefone">Telefone:</label>
+          <input type="tel" id="telefone2" name="telefone2" required>
+        </div>
+        <div>
+          <label for="endereço">Endereço:</label>
+          <input type="text" id="endereco" name="endereco" placeholder="Rua, Bairro, Cidade" required>
         </div>
         <div>
           <label for="data-nascimento">Data de Nascimento:</label>
@@ -54,6 +62,10 @@
         <div>
           <label for="cert-nascimento">Certidão Nasc.:</label>
           <input type="text" id="cert-nascimento" name="cert-nascimento" required>
+        </div>
+        <div>
+          <label for="curso">Data do Curso de Preparação:</label>
+          <input type="date" name="curso" id="curso" required>
         </div>
         <div>
           <label for="padrinho">Nome do Padrinho:</label>
@@ -68,8 +80,10 @@
           <input type="date" id="data-batismo" name="data-batismo" required>
         </div>
         <div>
-          <button type="submit">Enviar</button>
+          <br>
+          <button type="submit">Salvar</button>
         </div>
+        <br><br>
       </form>
     </div>
  </div>
