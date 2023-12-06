@@ -38,19 +38,20 @@
 
 <div class="cadastro">
          </div>
-        <h2>Lista de Batizados</h2>
+        <h2>Cadastro para Curso de Batismo</h2>
+        <h3>(Batizado será em outra paróquia)</h3>
         <form action="" method="POST">
         <div class="busca">
           <div>
-                <label class="control-label">Pesquisar por nome da criança</label>
+                <label class="control-label">Pesquisar por nome:</label>
                 <input type="text" name="busca1" placeholder="Search">
                 </div>
           <div>
-                <label class="control-label">Pesquisar por data do batismo</label>
+                <label class="control-label">Pesquisar por data do curso:</label>
                 <input type="date" name="data">
             </div>
             <button type="submit" value="a" name="listar">Listar todos</button>
-            <button type="submit" formaction="cadastro.php">Cadastrar</button>
+            <button type="submit" formaction="cadastrocurso.php">Cadastrar</button>
             <button type="submit">Pesquisar</button>
            
         </form>
@@ -60,15 +61,15 @@
         $data = $_POST['data'];
         $todos = $_POST['listar'];
         if($todos != ""){
-            $sql = "SELECT * FROM Cad_Children";
+            $sql = "SELECT * FROM cad_curso";
             $res = mysqli_query($conn, $sql);
             $registros = mysqli_num_rows($res);
         }elseif ($data != "") {
-            $sql2 = "SELECT * FROM Cad_Children WHERE Batizado = '$data'";
+            $sql2 = "SELECT * FROM cad_curso WHERE datacurso = '$data'";
             $res = mysqli_query($conn, $sql2);
             $registros = mysqli_num_rows($res);
         }elseif($busca != ""){
-            $sql1 = "SELECT * FROM Cad_Children WHERE Nome LIKE '%$busca%'";
+            $sql1 = "SELECT * FROM cad_curso WHERE name LIKE '%$busca%'";
             $res = mysqli_query($conn, $sql1);
             $registros = mysqli_num_rows($res);
         }
@@ -80,29 +81,21 @@
     <div class="tabela">
         <table>
         <tr>
-            <th>Criança</th>
-            <th>Nascimento</th>
-            <th>Cert. Nasc.</th>
+            <th>Nome</th>
+            <th>Endereço</th>
+            <th>Telefone</th>
             <th>Data do Curso</th>
-            <th>Data de Batismo</th>
-            <th>Cadastro</th>
+            <th>Editar</th>
             <th>Certificados</th>
         </tr>
         <?php while($row = mysqli_fetch_assoc($res)): ?>
             <tr>
-                <td><?php echo $row['Nome']; ?></td>
-                <td><?php echo $row['Nascimento']; ?></td>
-                <td><?php echo $row['cert_nasc']; ?></td>
-                <td><?php echo $row['curso']; ?></td>
-                <td><?php echo $row['Batizado']; ?></td>
-                <td>
-                    <a href="visualizarDados.php?Id=<?php echo $row['Id']?>"><span title="Visualizar"><img src="img/view.png"></span></a>
-                    <a href="editabat.php?Id=<?php echo $row['Id']; ?>"><span title="Editar"><img src="img/edit.png"></span></a>
-                </td>
-                <td>
-                    <a  href="certcursopdf.php?Id=<?php echo $row['Id']; ?>">(Curso)</a>
-                    <a href="certbatismo.php?Id=<?php echo $row['Id']; ?>">(Batismo)</a>
-                </td>
+                <td><?php echo $row['name']; ?></td>
+                <td><?php echo $row['addres']; ?></td>
+                <td><?php echo $row['phone']; ?></td>
+                <td><?php echo $row['datacurso']; ?></td>
+                <td><a href="editcurso.php?Id=<?php echo $row['Id']; ?>"><span title="Editar"><img src="img/edit.png"></span></a></td>
+                <td><a  href="certcursopdf.php?Id=<?php echo $row['Id']; ?>">(Curso)</a></td>
             </tr>
         <?php endwhile; ?>
     </table>

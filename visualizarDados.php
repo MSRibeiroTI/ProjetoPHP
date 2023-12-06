@@ -29,23 +29,29 @@ $conn->close();
     <title>View</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/style3.css'>
-    <script src='main.js'></script>
-</head>
-<div class="nav-container">
-    <ul class="menu" id="menu">
-        <li><a href="home.php">Home</a></li>
-            <li><a href="AgentList.php">Agentes</a></li>
-            <li><a href="batizadolist.php">Batizados</a></li>
-            <li><a href="calendario.php">Calendário</a></li>
-            <li><a href="Curso">Menu</a></li>
-            <li><a href="user.php">Usuários</a></li>    
-            <li><a href="config/logout.php">Sair</a></li>
-    </ul>
-</div>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='js/pastoral.js'></script>
+ </head>
+<body>
+<div class="topnav" id="myTopnav">
+    
+    <a href="home.php" class="active">Home</a>
+              <a href="AgentList.php">Agentes</a>
+              <a href="batizadolist.php">Batizados</a>
+              <a href="calendario.php">Calendário</a>
+              <a href="curso.php">Curso</a>
+              <a href="user.php">Usuários</a>  
+              <a href="config/logout.php">Sair</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  
+  </div>
 
 <body>
  <div class="card">
     <div class="card-body">
+      <br><br>
     <h1>Consultar Cadastro</h1>
     <form action="" method="post">
         <div class="a">
