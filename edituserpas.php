@@ -8,6 +8,20 @@
       echo "<script>alert('Acesso Restrito!')</script>";
       print "<script>location.href='home.php';</script>";
          }
+         include_once ("config/config.php");
+
+         if (isset($_GET['id'])) {
+             $id = $_GET['id'];
+             $sql = "SELECT * FROM usuario WHERE id = '$id'";
+             $res = mysqli_query($conn, $sql);
+             $row = mysqli_fetch_assoc($res);
+             
+             
+         
+         } else {
+             echo "Nenhum ID encontrado";
+         }
+         $conn->close();
 
 ?>
 
@@ -19,8 +33,8 @@
     <title>Casdastro</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' type='text/css' media='screen' href='css/style.css'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src='js/pastoral.js'></script>
  </head>
 <body>
@@ -41,24 +55,21 @@
 
 <body>
  <div class="card">
-    <div class="card-body">
-      <br><br>
-    <h1>Cadastro de Usuários do Sistema</h1>
-    <form action="config/adduser.php" method="post" >
-        <div>
-          <label for="nome-agente">Nome do Agente:</label>
-          <input type="text" id="nome-agente" name="nome-agente" required>
-        </div>
-        <div>
-          <label for="login">Nome para Login:</label>
-          <input type="text" id="login" name="login">
+    <div class="card-body"><br><br>
+    <h1>Atualização da Senha</h1>
+    <form action="config/edittuserpass.php?id=<?php echo $row['id']; ?>" method="post" >
+         <div>
+            <br>
+          <label for="login">Usuário:</label>
+          <?=$row['nome']; ?>
+          <br><br>
            </div>
           <div>
-          <label for="password">Senha:</label>
-          <input type="password" id="password" name="password" required>
+          <label for="senha">Nova Senha:</label>
+          <input type="password" id="password" name="passowrd" required>
         </div>
         <div>
-          <label for="confirm-password">Confirme a Senha:</label>
+          <label for="confirmar-senha">Confirme a Senha:</label>
           <input type="password" id="confirm-password" name="confirm-password" required>
           </div>
           <script>
@@ -70,21 +81,14 @@
                  }
                  })
           </script>
-          <div><span id="message"></span></div><br>
-          <div>
-          <label for="Nível de acesso"> Nível de Acesso ao Sistema:</label>
-          <select  id="nivel_acesso" name="nivel_acesso">
-            <option value="1">Usuario</option>
-            <option value="2">Agente</option>
-            <option value="3">Administrador</option>
-            </select>
-            </div><br>
-              <button type="submit">Salvar</button>
-                       <br><br>
+          <div><span id="message"></span></div>
+          <br><br>
+            <button type="submit">Salvar</button>
+                 <br><br>      
             </div>
         </form>
         
-           
+       
     </div>
  </div>
  </body>

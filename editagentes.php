@@ -67,7 +67,7 @@
           <div>
           <label for="phone">Telefone:</label>
           <input type="text" id="phone" name="phone" value="<?= $row['phone']; ?>"required>
-        </div>
+        </div><br><br>
             <button type="submit">Salvar</button>
                        
             </div>

@@ -22,3 +22,11 @@ function myFunction() {
     x.className = "topnav";
   }
 }
+
+$('#confirm-password').on('keyup', function(){
+  if($('#password').val() == $('#confirm-password').val()){
+    $('#message').html('As senhas coincidem').css('color', 'green');
+    }else{
+      $('#message').html('As senhas não coincidem').css('color', 'red');
+      }
+})

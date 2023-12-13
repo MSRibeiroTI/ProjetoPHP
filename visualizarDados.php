@@ -83,8 +83,20 @@ $conn->close();
           <label for="padrinho">Nome do Padrinho:</label>
           <?php echo $row['Padrinho']; ?>
         <br><br>
+        <label for="fez-curso">Já fez o curso preparatório?</label>
+          <?php echo $row['']; ?>
+        <br><br>
+        <label for="fez-curso">Em outra paróquia?</label>
+          <?php echo $row['']; ?>
+        <br><br>
           <label for="madrinha">Nome da Madrinha:</label>
           <?php echo $row['Madrinha']; ?>
+        <br><br>
+        <label for="fez-curso">Já fez o curso preparatório?</label>
+          <?php echo $row['']; ?>
+        <br><br>
+        <label for="fez-curso">Em outra paróquia?</label>
+          <?php echo $row['']; ?>
         <br><br>
           <label for="data-batismo">Data do Batismo:</label>
          <?php echo $row['Batizado']; ?>

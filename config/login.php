@@ -23,9 +23,7 @@ $qtd = $resultado->num_rows;
         $_SESSION["nivel"] = $row->nivel;
         header("location: ../home.php");
       }else{
-        echo '<div class="alert alert-danger" role="alert">Usuário ou Senha inválido!</div>';
-        echo "Usuário ou senha incorretos";
-        header("Location: /index.php");
-        }
+        header("Location: ../index.php?erro=senhainvalida");
+                }
         
 ?>

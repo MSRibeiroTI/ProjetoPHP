@@ -54,7 +54,7 @@
 
 <body>
  <div class="card">
-    <div class="card-body">
+    <div class="card-body"><br><br>
     <h1>Atualização do Usuário do Sistema</h1>
     <form action="config/edittuser.php?id=<?php echo $row['id']; ?>" method="post" >
         <div>
@@ -65,24 +65,16 @@
           <label for="login">Nome para Login:</label>
           <input type="text" id="login" value="<?=$row['nome']; ?>" name="login">
            </div>
-          <div>
-          <label for="senha">Senha:</label>
-          <input type="password" id="senha" name="senha" required>
-        </div>
-        <div>
-          <label for="confirmar-senha">Confirme a Senha:</label>
-          <input type="password" id="confirmar-senha" name="confirmar-senha" required>
-          </div>
-          <div>
+           <div>
           <label for="Nível de acesso"> Nível de Acesso ao Sistema:</label>
           <select  id="nivel_acesso" name="nivel_acesso">
             <option value="1">Usuario</option>
             <option value="2">Agente</option>
             <option value="3">Administrador</option>
             </select>
-            </div>
+            </div><br><br>
               <button type="submit">Salvar</button>
-                       
+                       <br><br>
             </div>
         </form>
        

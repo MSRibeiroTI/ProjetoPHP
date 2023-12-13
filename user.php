@@ -56,6 +56,7 @@
                 <td><?php echo $row['nivel']; ?></td>
                 <td>
                     <a href="edituser.php?id=<?php echo $row['id']; ?>">Editar</a>
+                    <a href="edituserpas.php?id=<?php echo $row['id']; ?>"> - Alterar Senha - </a>
                     <a onclick="return confirm('Confirma a exclusão deste registro?')"
                      href="config/deleteuser.php?id=<?php echo $row['id']; ?>">Excluir</a>
                 </td>

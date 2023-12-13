@@ -26,7 +26,7 @@ VALUES ('$usuario', '$pai', '$phonepai', '$mae', '$phonemae', '$nascimento', '$e
 $resultado = $conn->query($sql) or trigger_error($conn->error);
 
   if($resultado==true){
-    echo "<script>alert('Cadastrado com sucesso!')</script>";
+    echo "<script>alert('Cadastrado com sucesso!');</script>";
     header("location: ../batizadolist.php");
   }else{
      header("Location: ../home.php");

@@ -10,11 +10,10 @@
 
 include('config.php');
 
-$nome = $_POST['nome-agente'];
 $login = $_POST['login'];
-$nivel = $_POST['nivel_acesso'];
+$senha = md5($_POST['passowrd']);
 
-$sql = "UPDATE usuario SET nome_comp = '$nome', nome = '$login', nivel = '$nivel' WHERE id = '$id'";
+$sql = "UPDATE usuario SET senha = '$senha' WHERE id = '$id'";
 $resultado = $conn->query($sql) or trigger_error($conn->error);
 
   if($resultado==true){
