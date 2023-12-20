@@ -1,9 +1,9 @@
 <?php
- session_start();
+session_start();
 
- if (empty($_POST) or empty($_POST["nome"]) or empty($_POST[""])) {
+if (empty($_POST) or empty($_POST["nome"]) or empty($_POST[""])) {
   print "<script>location.href='cadastro.php';</script>";
- }
+}
 
 include('config.php');
 
@@ -25,10 +25,9 @@ $sql = "INSERT INTO Cad_Children (Nome, Pai, phonepai, Mae, phonemae, Nascimento
 VALUES ('$usuario', '$pai', '$phonepai', '$mae', '$phonemae', '$nascimento', '$endereco', '$curso', '$cert', '$padrinho', '$madrinha', '$batismo')";
 $resultado = $conn->query($sql) or trigger_error($conn->error);
 
-  if($resultado==true){
-    echo "<script>alert('Cadastrado com sucesso!');</script>";
-    header("location: ../batizadolist.php");
-  }else{
-     header("Location: ../home.php");
-    }
-?>
+if ($resultado == true) {
+  echo "<script>alert('Cadastrado com sucesso!');</script>";
+  header("location: ../batizadolist.php");
+} else {
+  header("Location: ../home.php");
+}

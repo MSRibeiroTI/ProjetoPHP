@@ -14,7 +14,7 @@ h1{
 form {
   font-family: 'Poppins',sans-serif;
   padding-top: 0;
-   width: 600px;
+   width: 80%;
     margin: 0 auto;
   }
   input {
@@ -23,11 +23,11 @@ form {
     height: 30px;
     border: 1px solid #ccc;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 20px;
   }
   
   div {
-    margin: 10px 0;
+    margin: 10px;
    }
 
    .btn {
@@ -45,13 +45,13 @@ form {
     width: 60%;
     border-collapse: collapse;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 50px;
    }
    .a{
     background-color: rgb(255, 255, 255);
     border-collapse: collapse;
     border-radius: 10px;
-    width: 130%;
+    width: 100%;
     justify-content: center;
       
     
@@ -69,23 +69,23 @@ form {
     height: 25px;
     font-weight: bold;
     background-color: #e8f1fc;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: right;
 
   }
  
   button {
     width: 200px;
-    margin: 0 auto;
+    margin: 20px;
     background-color: #085c94;
     color: white;
     border: none;
     padding: 10px;
     cursor: pointer;
     transition: background .3;
-    border-radius: 5px;
+    border-radius: 15px;
     text-decoration: none;
-    text-align: center;
+    
     
   }
   button:hover {
@@ -176,8 +176,8 @@ form {
         width: 100%;
         padding: 0;
     }
-    form, input {
-      width: 100%;
+    form, input, .a {
+      width: 90%;
   }
   }
 
