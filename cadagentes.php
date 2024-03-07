@@ -48,15 +48,15 @@ if (empty($_SESSION)) {
         <form action="config/addagent.php" method="post">
           <div>
             <label for="agente">Nome:</label>
-            <input type="text" id="agente" name="agente" required>
+            <input type="text" id="agente" name="agente" placeholder="Digite o nome completo" required>
           </div>
           <div>
             <label for="address">Endereço</label>
-            <input type="text" id="address" name="address">
+            <input type="text" id="address" name="address" placeholder="Rua, Bairro, Cidade...">
           </div>
           <div>
             <label for="phone">Telefone:</label>
-            <input type="text" id="phone" name="phone" required>
+            <input type="text" id="phone" name="phone" placeholder="Digite o DDD + número, só números, sem espaços, sem caracteres especiais." required>
           </div><br><br>
           <button type="submit">Salvar</button>
           <br><br>

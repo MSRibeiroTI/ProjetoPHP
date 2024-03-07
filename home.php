@@ -26,7 +26,7 @@ if (empty($_SESSION)) {
 
         <a href="home.php" class="active">Home</a>
         <a href="AgentList.php">Agentes</a>
-        <a href="batizadolist.php">Batizados</a>
+        <a href="batizadolist.php?page=1">Batizados</a>
         <a href="calendario.php">Calendário</a>
         <a href="curso.php">Curso</a>
         <a href="user.php">Usuários</a>

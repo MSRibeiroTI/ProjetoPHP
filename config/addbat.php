@@ -17,16 +17,20 @@ $endereco = $_POST['endereco'];
 $cert = $_POST['cert-nascimento'];
 $curso = $_POST['curso'];
 $padrinho = $_POST['padrinho'];
+$fezpad = $_POST['fezcursopad'];
+$ondepad = $_POST['ondepad'];
 $madrinha = $_POST['madrinha'];
+$fezmad = $_POST['fezcursomad'];
+$ondemad = $_POST['ondemad'];
 $batismo = $_POST['data-batismo'];
 
 
-$sql = "INSERT INTO Cad_Children (Nome, Pai, phonepai, Mae, phonemae, Nascimento, addres, curso, cert_nasc, Padrinho, Madrinha, Batizado)
-VALUES ('$usuario', '$pai', '$phonepai', '$mae', '$phonemae', '$nascimento', '$endereco', '$curso', '$cert', '$padrinho', '$madrinha', '$batismo')";
+$sql = "INSERT INTO Cad_Children (Nome, Pai, phonepai, Mae, phonemae, Nascimento, addres, curso, cert_nasc, Padrinho, fezcursopad, ondepad, Madrinha, fezcursomad, ondemad, Batizado)
+VALUES ('$usuario', '$pai', '$phonepai', '$mae', '$phonemae', '$nascimento', '$endereco', '$curso', '$cert', '$padrinho', '$fezpad', '$ondepad', '$madrinha', '$fezmad', '$ondemad', '$batismo')";
 $resultado = $conn->query($sql) or trigger_error($conn->error);
 
 if ($resultado == true) {
-  echo "<script>alert('Cadastrado com sucesso!');</script>";
+  echo '<script>alert("Cadastrado com sucesso!");</script>';
   header("location: ../batizadolist.php");
 } else {
   header("Location: ../home.php");

@@ -67,9 +67,9 @@ $conn->close();
           <div>
             <label for="Nível de acesso"> Nível de Acesso ao Sistema:</label>
             <select id="nivel_acesso" name="nivel_acesso">
-              <option value="1">Usuario</option>
-              <option value="2">Agente</option>
-              <option value="3">Administrador</option>
+              <option value="1" <?php if($row["nivel"] == "1"){echo 'selected';} ?>>Usuário</option>
+              <option value="2" <?php if($row["nivel"] == "2"){echo 'selected';} ?>>Agente</option>
+              <option value="3" <?php if($row["nivel"] == "3"){echo 'selected';} ?>>Administrador</option>
             </select>
           </div><br><br>
           <button type="submit">Salvar</button>

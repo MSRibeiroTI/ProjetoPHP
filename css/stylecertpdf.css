@@ -28,17 +28,20 @@ img{
     float: left;
 }
 .certpai {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: absolute;
     top: 0px;
     width: 350px;
     height: 500px;
     margin: 3mm;
     left: -11px;
-    border: 1px solid black;
+    border: 1px solid rgb(115, 141, 0);
     box-sizing: border-box;
     page-break-inside: avoid;
     text-align: center;
-    
+    background-image: url("../img/certcurso.jpg");
+    background-size: cover;
+    line-height: 1.1;
   }
   .certmae {
     position: absolute;
@@ -47,12 +50,14 @@ img{
     width: 350px;
     height: 500px;
     margin: 3mm;
-    border: 1px solid black;
+    border: 1px solid rgb(115, 141, 0);
     box-sizing: border-box;
     page-break-inside: avoid;
     text-align: center;
     justify-content: right;
-    
+    background-image: url("../img/certcurso.jpg");
+    background-size: cover;
+    line-height: 1.1;
   }
   .certpad {
     position: absolute;
@@ -61,12 +66,14 @@ img{
     width: 350px;
     height: 500px;
     margin: 3mm;
-    border: 1px solid black;
+    border: 1px solid rgb(115, 141, 0);
     box-sizing: border-box;
     page-break-inside: avoid;
     text-align: center;
     justify-content: right;
-    
+    background-image: url("../img/certcurso.jpg");
+    background-size: cover;
+    line-height: 1.1;
   }
   .certmad {
     position: absolute;
@@ -75,9 +82,11 @@ img{
     left: -11px;
     height: 500px;
     margin: 3mm;
-    border: 1px solid black;
+    border: 1px solid rgb(115, 141, 0);
     box-sizing: border-box;
     page-break-inside: avoid;
     text-align: center;
-    
+    background-image: url("../img/certcurso.jpg");
+    background-size: cover;
+    line-height: 1.1;
   }

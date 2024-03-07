@@ -74,15 +74,13 @@ $conn->close();
           <script>
             $('#confirm-password').on('keyup', function() {
               if ($('#password').val() == $('#confirm-password').val()) {
-                $('#message').html('As senhas coincidem').css('color', 'green');
+                $('#message').html('<br><button type="submit">Salvar</button>').css('color', 'green');
               } else {
-                $('#message').html('As senhas não coincidem').css('color', 'red');
+                $('#message').html('<br>As senhas não coincidem<br><br>').css('color', 'red');
               }
             })
           </script>
           <div><span id="message"></span></div>
-          <br><br>
-          <button type="submit">Salvar</button>
           <br><br>
       </div>
       </form>

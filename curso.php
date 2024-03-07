@@ -97,7 +97,7 @@ include_once('config/config.php');
                     <td><?php echo $row['phone']; ?></td>
                     <td><?php echo $row['datacurso']; ?></td>
                     <td><a href="editcurso.php?id=<?php echo $row['id']; ?>"><span title="Editar"><img src="img/edit.png"></span></a></td>
-                    <td><a href="certcursopdf.php?Id=<?php echo $row['id']; ?>">(Curso)</a></td>
+                    <td><a href="gerapdfcurso.php?Id=<?php echo $row['id']; ?>">(Curso)</a></td>
                 </tr>
             <?php endwhile; ?>
         </table>

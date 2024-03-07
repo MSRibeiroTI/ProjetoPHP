@@ -66,13 +66,12 @@ session_start();
           <script>
             $('#confirm-password').on('keyup', function() {
               if ($('#password').val() == $('#confirm-password').val()) {
-                $('#message').html('As senhas coincidem').css('color', 'green');
+                $('#message').html('<br><button type="submit">Salvar</button>').css('color', 'green');
               } else {
-                $('#message').html('As senhas não coincidem').css('color', 'red');
+                $('#message').html('<br>As senhas não coincidem<br><br>').css('color', 'red');
               }
             })
           </script>
-          <div><span id="message"></span></div><br>
           <div>
             <label for="Nível de acesso"> Nível de Acesso ao Sistema:</label>
             <select id="nivel_acesso" name="nivel_acesso">
@@ -81,8 +80,8 @@ session_start();
               <option value="3">Administrador</option>
             </select>
             </div><br>
-          <button type="submit">Salvar</button>
-          <br><br>
+            <div><span id="message"></span></div><br>
+            <br><br>
       </div>
       
       </form>

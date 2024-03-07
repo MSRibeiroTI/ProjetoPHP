@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+@font-face {
+    font-family: minhaFonte;
+    src: url(SCRIPTBL.TTF);
+}
+
+.certpai {
+    font-family: minhaFonte;
+    position: absolute;
+    top: -45px;
+    width: 1090px;
+    height: 770px;
+    margin: 3mm;
+    left: -43px;
+    font-size: 25px;
+    box-sizing: border-box;
+    page-break-inside: avoid;
+    text-align: center;
+    background-image: url("../img/batismo2.jpg");
+    background-size: cover;
+    line-height: 0.8;
+}
+
+.sheet padding-10mm {
+    width: 297mm;
+    min-height: 210mm;
+
+    border: 1px #bbb4b4 solid;
+
+}
+.pais {
+    font-size: 25px;
+    margin-left: 150px;
+    margin-top: 460px;
+    font-family: minhaFonte;
+    }
+
+.pad {
+    margin-top: -85px;
+    font-size: 25px;
+    top: 50px;
+    margin-left: 600px;
+    font-family: minhaFonte;
+  }
+
+  img{
+    margin-left: 462px;
+    margin-top: -550px;
+  }

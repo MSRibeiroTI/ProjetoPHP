@@ -79,7 +79,7 @@ $conn->close();
           </div>
           <div>
             <label for="data-nascimento">Data de Nascimento:</label>
-            <input type="date" id="data-nascimento" name="data-nascimento" value="<?php echo $row['Nascimento']; ?>">
+            <input type="date" id="data-nascimento" name="data-nascimento" value="<?php echo $row['Nascimento']; ?>" required>
           </div>
           <div>
             <label for="cert-nascimento">Certidão Nasc.:</label>
@@ -87,25 +87,77 @@ $conn->close();
           </div>
           <div>
             <label for="curso">Data do Curso de Preparação:</label>
-            <input type="date" name="curso" id="curso" value="<?php echo $row['curso'] ?>">
+            <input type="date" name="curso" id="curso" value="<?php echo $row['curso'] ?>" required>
           </div>
           <div>
             <label for="padrinho">Nome do Padrinho:</label>
             <input type="text" id="padrinho" name="padrinho" value="<?php echo $row['Padrinho']; ?>">
           </div>
           <div>
-            <label for="madrinha">Nome da Madrinha:</label>
-            <input type="text" id="madrinha" name="madrinha" value="<?php echo $row['Madrinha']; ?>">
-          </div>
-          <div>
-            <label for="data-batismo">Data do Batismo:</label>
-            <input type="date" id="data-batismo" name="data-batismo" value="<?php echo $row['Batizado']; ?>">
-          </div>
-          <div>
+            <label for="cursopadrinho">Já fez o curso preparatório?</label>
+            <select id="fezcursopad" name="fezcursopad">
+              <option value="Sim" <?php if ($row["fezcursopad"] == "Sim") {
+                                    echo 'selected';
+                                  } ?>>Sim</option>
+              <option value="Não" <?php if ($row["fezcursopad"] == "Não") {
+                                    echo 'selected';
+                                  } ?>>Não</option>
+            </select>
             <br>
-            <button type="submit">Atualizar</button>
-          </div>
-          <br><br>
+            <div>
+              <label for="cursopadrinho">Em outra paróquia?</label>
+              <select id="ondepad" name="ondepad">
+                <option value="Não" <?php if ($row["ondepad"] == "Não") {
+                                      echo 'selected';
+                                    } ?>>Não, ainda não fez</option>
+                <option value="Não2" <?php if ($row["ondepad"] == "Não2") {
+                                        echo 'selected';
+                                      } ?>>Não, fez aqui</option>
+                <option value="Sim" <?php if ($row["ondepad"] == "Sim") {
+                                      echo 'selected';
+                                    } ?>>Sim, fez em outa paróquia</option>
+              </select>
+              <br><br>
+            </div>
+            <div>
+              <label for="madrinha">Nome da Madrinha:</label>
+              <input type="text" id="madrinha" name="madrinha" value="<?php echo $row['Madrinha']; ?>">
+            </div>
+            <div>
+            <label for="cursopadrinho">Já fez o curso preparatório?</label>
+            <select id="fezcursomad" name="fezcursomad">
+              <option value="Sim" <?php if ($row["fezcursomad"] == "Sim") {
+                                    echo 'selected';
+                                  } ?>>Sim</option>
+              <option value="Não" <?php if ($row["fezcursomad"] == "Não") {
+                                    echo 'selected';
+                                  } ?>>Não</option>
+            </select>
+            <br>
+            <div>
+              <label for="cursopadrinho">Em outra paróquia?</label>
+              <select id="ondemad" name="ondemad">
+                <option value="Não" <?php if ($row["ondemad"] == "Não") {
+                                      echo 'selected';
+                                    } ?>>Não, ainda não fez</option>
+                <option value="Não2" <?php if ($row["ondemad"] == "Não2") {
+                                        echo 'selected';
+                                      } ?>>Não, fez aqui</option>
+                <option value="Sim" <?php if ($row["ondemad"] == "Sim") {
+                                      echo 'selected';
+                                    } ?>>Sim, fez em outa paróquia</option>
+              </select>
+              <br><br>
+            </div>
+            <div>
+              <label for="data-batismo">Data do Batismo:</label>
+              <input type="date" id="data-batismo" name="data-batismo" value="<?php echo $row['Batizado']; ?>" required>
+            </div>
+            <div>
+              <br>
+              <button type="submit">Atualizar</button>
+            </div>
+            <br><br>
         </form>
       </div>
     </div>

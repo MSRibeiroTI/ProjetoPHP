@@ -86,15 +86,15 @@ if (empty($_SESSION)) {
             <label for="padrinho">Nome do Padrinho:</label>
             <input type="text" id="padrinho" name="padrinho" required><br>
             <h4>Já fez o curso preparatório?<h4>
-                <select name="preparacao" id="preparacao">
-                  <option value="nao">Não</option>
-                  <option value="sim">Sim</option>
+                <select id="fezcursopad" name="fezcursopad">
+                  <option value="Não">Não</option>
+                  <option value="Sim">Sim</option>
                 </select>
                 <h4>Em outra paróquia?</h4>
-                <select name="paroquia" id="paroquia">
-                  <option value="nao">Não, ainda não fez</option>
-                  <option value="não2">Não, fez aqui</option>
-                  <option value="sim">Sim, fez em outa paróquia</option>
+                <select id="ondepad" name="ondepad">
+                  <option value="Não">Não, ainda não fez</option>
+                  <option value="Não2">Não, fez aqui</option>
+                  <option value="Sim">Sim, fez em outa paróquia</option>
                 </select>
           </div>
           <br>
@@ -102,15 +102,15 @@ if (empty($_SESSION)) {
             <label for="madrinha">Nome da Madrinha:</label>
             <input type="text" id="madrinha" name="madrinha" required><br>
             <h4>Já fez o curso preparatório?<h4>
-                <select name="preparacao" id="preparacao">
-                  <option value="nao">Não</option>
-                  <option value="sim">Sim</option>
+                <select id="fezcursomad" name="fezcursomad">
+                  <option value="Não">Não</option>
+                  <option value="Sim">Sim</option>
                 </select>
                 <h4>Em outra paróquia?</h4>
-                <select name="paroquia" id="paroquia">
-                  <option value="nao">Não, ainda não fez</option>
-                  <option value="não2">Não, fez aqui</option>
-                  <option value="sim">Sim, fez em outa paróquia</option>
+                <select id="ondemad" name="ondemad">
+                  <option value="Não">Não, ainda não fez</option>
+                  <option value="Não2">Não, fez aqui</option>
+                  <option value="Sim">Sim, fez em outa paróquia</option>
                 </select>
                 <h4>Caso tenham feito em outra paróquia, devem apresentar certificado do curso dentro do prazo de validade.</h4>
           </div>

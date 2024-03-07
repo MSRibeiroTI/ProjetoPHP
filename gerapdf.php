@@ -25,7 +25,7 @@ $conn->close();
 use Dompdf\Dompdf;
 
 $dompdf = new Dompdf(['enable_remote' => true]);
-
+ 
 $html = "
  <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml'>
@@ -35,76 +35,68 @@ $html = "
  <link rel='stylesheet' type='text/css' media='screen' href='http://localhost/batismo/css/stylecertpdf.css'>
  
 
-</head>
+</head> 
+";
+$date = new DateTime($row['curso']);
+$date2 = $date -> format('d/m/Y');
 
+$html .= "
 <body class='A4'>
  <section class='sheet padding-10mm'>
     <div class='certpai'>
       <img class='imagem' src='http://localhost/batismo/img/brasao.png' alt=''>
       <img src='http://localhost/batismo/img/LogoBatismo.png' alt='Logotipo da Empresa'>
-      <h3>Certificado do Curso de Batismo</h3>
-      <p>Certifico que</p>
+      <br><br><br><br><br>
+      <p>Certificamos que</p>
       <h3>$row[Pai]</h3>
       <p>participou do curso de 'Preparação para pais e </p>
       <p>padrinhos', ministrado pela Pastoral do Batismo</p>
       <p>da Paróquia Nossa Senhora do Livramento.</p>
-      <h4>Arcoverde, $row[curso]</h4>
-      <br>
-      <p>__________________________________</p>
-      <p>Coordenador</p>
-      <br>
-      <h5>Certificado válido por 1 ano</h5>
+      <h4>Arcoverde, $date2</h4>
+      <p><br>_______________________________<br>Catequista</p>
+            
     </div>
 
     <div class='certmae'>
       <img class='imagem' src='http://localhost/batismo/img/brasao.png' alt=''>
       <img src='http://localhost/batismo/img/LogoBatismo.png' alt='Logotipo da Empresa'>
-      <h3>Certificado do Curso de Batismo</h3>
-      <p>Certifico que</p>
+      <br><br><br><br><br>
+      <p>Certificamos que</p>
       <h3>$row[Mae]</h3>
       <p>participou do curso de 'Preparação para pais e </p>
       <p>padrinhos', ministrado pela Pastoral do Batismo</p>
       <p>da Paróquia Nossa Senhora do Livramento.</p>
-      <h4>Arcoverde, $row[curso]</h4>
-      <br>
-      <p>__________________________________</p>
-      <p>Coordenador</p>
-      <br>
-      <h5>Certificado válido por 1 ano</h5>
+      <h4>Arcoverde, $date2</h4>
+      <p><br>_______________________________<br>Catequista</p>
+      
     </div>
 
     <div class='certpad'>
       <img class='imagem' src='http://localhost/batismo/img/brasao.png' alt=''>
       <img src='http://localhost/batismo/img/LogoBatismo.png' alt='Logotipo da Empresa'>
-      <h3>Certificado do Curso de Batismo</h3>
-      <p>Certifico que</p>
+      <br><br><br><br><br>
+      <p>Certificamos que</p>
       <h3>$row[Padrinho]</h3>
       <p>participou do curso de 'Preparação para pais e </p>
       <p>padrinhos', ministrado pela Pastoral do Batismo</p>
       <p>da Paróquia Nossa Senhora do Livramento.</p>
-      <h4>Arcoverde, $row[curso]</h4>
-      <br>
-      <p>__________________________________</p>
-      <p>Coordenador</p>
-      <br>
-      <h5>Certificado válido por 1 ano</h5>
+      <h4>Arcoverde, $date2</h4>
+      <p><br>_______________________________<br>Catequista</p>
+      
     </div>
 
     <div class='certmad'>
       <img class='imagem' src='http://localhost/batismo/img/brasao.png' alt=''>
       <img src='http://localhost/batismo/img/LogoBatismo.png' alt='Logotipo da Empresa'>
-      <h3>Certificado do Curso de Batismo</h3>
-      <p>Certifico que</p>
+      <br><br><br><br><br>
+      <p>Certificamos que</p>
       <h3>$row[Madrinha]</h3>
       <p>participou do curso de 'Preparação para pais e </p>
       <p>padrinhos', ministrado pela Pastoral do Batismo</p>
       <p>da Paróquia Nossa Senhora do Livramento.</p>
-      <h4>Arcoverde, $row[curso]</h4>
-      <br>
-      <p>__________________________________</p>
-      <p>Coordenador</p>
-      <br>
-      <h5>Certificado válido por 1 ano</h5>
+      <h4>Arcoverde, $date2</h4>
+      <p><br>_______________________________<br>Catequista</p>
+      
     </div>
 
  </section>

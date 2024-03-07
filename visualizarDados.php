@@ -54,7 +54,7 @@ $conn->close();
         <br><br>
         <h1>Consultar Cadastro</h1>
         <form action="" method="post">
-          <div class="a">
+          <div class="a"><br><br>
             <label for="nome-crianca">Nome da Criança:</label>
             <?= $row['Nome'] ?>
             <br><br>
@@ -84,26 +84,31 @@ $conn->close();
             <?php echo $row['Padrinho']; ?>
             <br><br>
             <label for="fez-curso">Já fez o curso preparatório?</label>
-            <?php echo $row['']; ?>
+            <?php echo $row['fezcursopad']; ?>
             <br><br>
             <label for="fez-curso">Em outra paróquia?</label>
-            <?php echo $row['']; ?>
+            <?php if($row["ondepad"] == "Não"){echo 'Não, ainda não fez';} ?>
+            <?php if($row["ondepad"] == "Não2"){echo 'Não, fez aqui';} ?>
+            <?php if($row["ondepad"] == "Sim"){echo 'Sim, fez em outa paróquia';} ?>
             <br><br>
             <label for="madrinha">Nome da Madrinha:</label>
             <?php echo $row['Madrinha']; ?>
             <br><br>
             <label for="fez-curso">Já fez o curso preparatório?</label>
-            <?php echo $row['']; ?>
+            <?php echo $row['fezcursomad']; ?>
             <br><br>
             <label for="fez-curso">Em outra paróquia?</label>
-            <?php echo $row['']; ?>
+            <?php if($row["ondemad"] == "Não"){echo 'Não, ainda não fez';} ?>
+            <?php if($row["ondemad"] == "Não2"){echo 'Não, fez aqui';} ?>
+            <?php if($row["ondemad"] == "Sim"){echo 'Sim, fez em outa paróquia';} ?>
             <br><br>
             <label for="data-batismo">Data do Batismo:</label>
             <?php echo $row['Batizado']; ?>
-          </div>
+            <br><br></div>
           <div clas="btn">
-            <br>
             <button type="submit" formaction="editabat.php?Id=<?php echo $row['Id']; ?>"><span title="Editar">Editar</span></button>
+            <button type="submit" formaction="certcursopdf.php?Id=<?php echo $row['Id']; ?>"><span title="Emitir Certificado do Curso">Certificado Curso</span></button>
+            <button type="submit" formaction="certcursopdf.php?Id=<?php echo $row['Id']; ?>"><span title="Emitir Certificado do Batismo">Certificado Batismo</span></button>
             <button type="submit" formaction="batizadolist.php"><span title="Voltar">Voltar</span></button>
           </div>
         </form>

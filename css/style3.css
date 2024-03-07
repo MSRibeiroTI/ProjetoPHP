@@ -1,6 +1,7 @@
 body{
   font-family: 'Poppins',sans-serif;
-   background-color: #73a7e6;
+  height: 200px;
+  background-image: linear-gradient(to right,  rgb(97, 97, 218), #73a7e6, #73a7e6, #73a7e6, rgb(97, 97, 218));
    
 }
 h1{
@@ -75,8 +76,8 @@ form {
   }
  
   button {
-    width: 200px;
-    margin: 20px;
+    width: 150px;
+    margin: auto;
     background-color: #085c94;
     color: white;
     border: none;

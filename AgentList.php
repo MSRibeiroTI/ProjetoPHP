@@ -48,12 +48,14 @@ $quant = mysqli_num_rows($res);
             <th>Nome</th>
             <th>Endereço</th>
             <th>Telefone</th>
+            <th>Whatsapp</th>
         </tr>
         <?php while ($row = mysqli_fetch_assoc($res)) : ?>
             <tr>
                 <td><?php echo $row['name']; ?></td>
                 <td><?php echo $row['address']; ?></td>
                 <td><?php echo $row['phone']; ?></td>
+                <td><a href="https://api.whatsapp.com/send?phone=<?php echo $row['phone'] ?>" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp" width="35px" height="auto"></td>
             </tr>
         <?php endwhile; ?>
     </table>
