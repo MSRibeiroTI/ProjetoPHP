@@ -22,20 +22,9 @@ if (empty($_SESSION)) {
 </head>
 
 <body>
-    <div class="topnav" id="myTopnav">
+   
+<?php include "menu.php";  ?>
 
-        <a href="home.php" class="active">Home</a>
-        <a href="AgentList.php">Agentes</a>
-        <a href="batizadolist.php">Batizados</a>
-        <a href="calendario.php">Calendário</a>
-        <a href="curso.php">Curso</a>
-        <a href="user.php">Usuários</a>
-        <a href="config/logout.php">Sair</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-
-    </div>
     <img src="img/calendario.jpeg" alt="">
 
 </body>

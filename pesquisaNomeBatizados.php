@@ -62,7 +62,7 @@ $registros = mysqli_num_rows($res);
 
                     <?php for ($i = $page - $MaxLinks; $i <= $page - 1; $i++) : ?>
                         <?php if ($i > 0) : ?>
-                            <a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                            <a href="?page=<?php echo $i;?>"><?php echo $i; ?></a>
                         <?php endif; ?>
                     <?php endfor; ?>
 
@@ -70,10 +70,11 @@ $registros = mysqli_num_rows($res);
 
                     <?php for ($i2 = $page + 1; $i2 <= $page + $MaxLinks; $i2++) : ?>
                         <?php if ($i2 <= $pages) : ?>
-                            <a href="?page=<?php echo $i2; ?>"><?php echo $i2; ?></a>
+                            <a href="?page=<?php echo $i2;?>"><?php echo $i2; ?></a>
                         <?php endif; ?>
                     <?php endfor; ?>
 
                     <a href="?page=<?php echo $pages; ?>">>></a>
                     <hr>
         </div>
+        

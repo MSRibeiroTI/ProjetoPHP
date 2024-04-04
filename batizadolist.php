@@ -23,21 +23,7 @@ include_once('config/config.php');
 
 <body>
 
-    <?php $dados = filter_input_array(INPUT_POST, FILTER_DEFAULT); ?>
-    <div class="topnav" id="myTopnav">
-
-        <a href="home.php" class="active">Home</a>
-        <a href="AgentList.php">Agentes</a>
-        <a href="batizadolist.php">Batizados</a>
-        <a href="calendario.php">Calendário</a>
-        <a href="curso.php">Curso</a>
-        <a href="user.php">Usuários</a>
-        <a href="config/logout.php">Sair</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-
-    </div>
+    <?php include "menu.php";  ?>
 
     <div class="cadastro">
     </div>
@@ -75,10 +61,17 @@ include_once('config/config.php');
     } elseif ($data != '') { //Senão se é uma pesquisa por data
         include "pesquisaDataBatizados.php";
     } else { //senão lista somente o que foi digitado na barra de pesquisa
-        include "pesquisaNomeBatizados.php";
+        //salva o  texto digitado em um array para possível pesquisa futura
+
+        $_SESSION["busca"] = $busca;
+        if (isset($_SESSION['busca'])) {
+            // $text_search = $_SESSION['busca'];
+            include "pesquisaNomeBatizados.php";
+            
+        }
     }
-  
-  ?>
+
+    ?>
 
     <?php
     mysqli_close($conn);

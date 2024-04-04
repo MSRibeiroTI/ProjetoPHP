@@ -8,7 +8,7 @@ $todos = isset($_POST['listar']) ? $_POST['listar'] : '';
 $sql5 = "SELECT * FROM Cad_Children";
             $resultado5 = mysqli_query($conn, $sql5);
             $total_linhas = mysqli_num_rows($resultado5);
-            $sql = "SELECT * FROM Cad_Children LIMIT $limit OFFSET $offset";
+            $sql = "SELECT * FROM Cad_Children LIMIT $limit OFFSET $offset ORDER  BY Nome ASC";
             $res = mysqli_query($conn, $sql);
             $registros = mysqli_num_rows($res);
 ?>
@@ -57,12 +57,11 @@ $sql5 = "SELECT * FROM Cad_Children";
         ?>
         <!-- Paginação -->
         <div class="pages" style="text-align: center;  font-size: large;">
-            Páginas: <br> <a href="?page=1">
-                << </a>
+            Páginas: <br> <a href="?page=1"><< </a>
 
                     <?php for ($i = $page - $MaxLinks; $i <= $page - 1; $i++) : ?>
                         <?php if ($i > 0) : ?>
-                            <a href="?page=<?php echo $i; ?>" onclick=""><?php echo $i; ?></a>
+                            <a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
                         <?php endif; ?>
                     <?php endfor; ?>
 

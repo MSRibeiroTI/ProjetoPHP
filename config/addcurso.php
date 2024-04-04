@@ -23,3 +23,4 @@ if ($resultado == true) {
 } else {
   header("Location: ../home.php");
 }
+?>

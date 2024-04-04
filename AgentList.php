@@ -8,9 +8,16 @@ if (empty($_SESSION)) {
     print "<script>location.href='AgentListadmin.php';</script>";
 }
 include_once('config/config.php');
-$sql = "SELECT * FROM agentes ORDER BY name";
+$page = (isset($_GET['page'])) ? $_GET['page'] : 1;
+$limit = 15;
+$offset = ($limit * $page) - $limit;
+
+$sql1 = "SELECT * FROM agentes ORDER BY name";
+$res1 = mysqli_query($conn, $sql1);
+$total_linhas = mysqli_num_rows($res1);
+$sql = "SELECT * FROM agentes ORDER BY name LIMIT $limit OFFSET $offset";
 $res = mysqli_query($conn, $sql);
-$quant = mysqli_num_rows($res);
+$quant = mysqli_num_rows($res1);
 
 ?>
 
@@ -28,20 +35,9 @@ $quant = mysqli_num_rows($res);
 </head>
 
 <body>
-    <div class="topnav" id="myTopnav">
+    
+<?php include "menu.php";  ?>
 
-        <a href="home.php" class="active">Home</a>
-        <a href="AgentList.php">Agentes</a>
-        <a href="batizadolist.php">Batizados</a>
-        <a href="calendario.php">Calendário</a>
-        <a href="curso.php">Curso</a>
-        <a href="user.php">Usuários</a>
-        <a href="config/logout.php">Sair</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-        </a>
-
-    </div>
     <h2>Agentes da Pastoral do Batismo</h2>
     <table>
         <tr>
@@ -60,11 +56,36 @@ $quant = mysqli_num_rows($res);
         <?php endwhile; ?>
     </table>
     <table>
-        <tr>
-            <td><?php echo "Agentes Cadastrados: $quant"; ?></td>
-        </tr>
+            <td>Número de Registros desta página: <?php echo "$quant"; ?></td><br>
+            <td>Total Cadastrado: <?php echo "$total_linhas"; ?></td>
         <br>
+    </table>
+        <?php
+        $pages = ceil($total_linhas / $limit);
+        $MaxLinks = 2;
 
+        ?>
+        <!-- Paginação -->
+        <div class="pages" style="text-align: center;  font-size: large;">
+            Páginas: <br> <a href="?page=1">
+                << </a>
+
+                    <?php for ($i = $page - $MaxLinks; $i <= $page - 1; $i++) : ?>
+                        <?php if ($i > 0) : ?>
+                            <a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a>
+                        <?php endif; ?>
+                    <?php endfor; ?>
+
+                    <?php echo $page; ?>
+
+                    <?php for ($i2 = $page + 1; $i2 <= $page + $MaxLinks; $i2++) : ?>
+                        <?php if ($i2 <= $pages) : ?>
+                            <a href="?page=<?php echo $i2; ?>"><?php echo $i2; ?></a>
+                        <?php endif; ?>
+                    <?php endfor; ?>
+
+                    <a href="?page=<?php echo $pages; ?>">>></a>
+        </div>
 
         <?php
         mysqli_close($conn);

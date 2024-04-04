@@ -9,7 +9,7 @@ include('config.php');
 
 $nome = strtoupper($_POST['agente']);
 $address = strtoupper($_POST['address']);
-$phone = $_POST['phone'];
+$phone = trim($_POST['phone']);
 
 $sql = "INSERT INTO agentes (name, address, phone) VALUES ('$nome', '$address','$phone')";
 $resultado = $conn->query($sql) or trigger_error($conn->error);

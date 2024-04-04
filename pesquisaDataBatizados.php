@@ -8,7 +8,7 @@ $offset = ($limit * $page) - $limit;
 $sql5 = "SELECT * FROM Cad_Children WHERE Batizado = '$data'";
 $resultado5 = mysqli_query($conn, $sql5);
 $total_linhas = mysqli_num_rows($resultado5);
-$sql2 = "SELECT * FROM Cad_Children WHERE Batizado = '$data' LIMIT $limit OFFSET $offset";
+$sql2 = "SELECT * FROM Cad_Children WHERE Batizado = '$data' LIMIT $limit OFFSET $offset ORDER BY  Nome ASC";
 $res = mysqli_query($conn, $sql2);
 $registros = mysqli_num_rows($res);
 
