@@ -20,7 +20,7 @@ if (isset($_GET['Id'])) {
 } else {
   echo "Nenhum ID encontrado";
 }
-setlocale(LC_ALL, NULL);
+//setlocale(LC_ALL, NULL);
 setlocale(LC_ALL, 'pt_BR.utf8');
 date_default_timezone_set('America/Sao_Paulo');
 
@@ -56,14 +56,16 @@ $html .= "
     <div class='certpai'>
     <style type='text/css'>
     @charset 'utf-8';
-
+    @import url('https://fonts.googleapis.com/css?family=Neuton:400,700&display=swap');
+    body {
+      font-family: 'Neuton', serif;
+      }
     @font-face {
-        font-family: 'minhaFonte';
-        src: url(SCRIPTBL.TTF);
+        font-family: 'Neuton', serif;
         font-style: normal;
 
         body{
-          font-family:'minhaFonte!important';
+          font-family: 'Neuton', serif;
         }
   }</style>
   <br><br><br><br><br><br><br><br>

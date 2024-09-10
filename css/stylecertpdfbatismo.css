@@ -4,10 +4,17 @@ body {
     background-color: #ffffff;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Neuton:400,700&display=swap');
+body {
+  font-family: 'Neuton', serif;
+  }
 @font-face {
-    font-family: minhaFonte;
-    src: url(SCRIPTBL.TTF);
-}
+    font-family: 'Neuton', serif;
+    font-style: normal;
+
+    body{
+      font-family: 'Neuton', serif;
+    }}
 
 .certpai {
     font-family: minhaFonte;

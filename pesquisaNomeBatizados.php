@@ -7,7 +7,7 @@ $offset = ($limit * $page) - $limit;
 $sql5 = "SELECT * FROM Cad_Children WHERE Nome LIKE '%$busca%'";
 $resultado5 = mysqli_query($conn, $sql5);
 $total_linhas = mysqli_num_rows($resultado5);
-$sql1 = "SELECT * FROM Cad_Children WHERE Nome LIKE '%$busca%' LIMIT $limit OFFSET $offset";
+$sql1 = "SELECT * FROM Cad_Children WHERE Nome LIKE '%$busca%' order by Nome LIMIT $limit OFFSET $offset";
 $res = mysqli_query($conn, $sql1);
 $registros = mysqli_num_rows($res);
 
